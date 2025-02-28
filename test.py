@@ -1,6 +1,7 @@
 from calc_AO_overlap import calc_AO_overlap
 from get_MO_matrix_closed_shell import get_MO_matrix_closed_shell
 from get_MO_matrix_open_shell import get_MO_matrix_open_shell
+from get_CI_closed_shell import get_CI_closed_shell
 from get_CI_open_shell import get_CI_open_shell
 import numpy as np
 
@@ -36,6 +37,16 @@ MO_matrix = get_MO_matrix_open_shell(moldenFile, Nbf, 'alpha')
 np.savetxt('mo_matrix.txt', MO_matrix, fmt = '%.6f')
 '''
 
+# Testing reading the CI vectors for a closed shell
+
+nwFile = 'tddft_Neutral.out'
+root = 1
+CI_vector = get_CI_closed_shell(nwFile, root)
+
+print('CI_vector')
+print(CI_vector)
+
+'''
 # Testing reading the CI vectors for open shell
 
 nwFile = 'tddft_Cation_O.out'
@@ -45,3 +56,5 @@ CI_vector = get_CI_open_shell(nwFile, root, channel)
 
 print('CI_vector: ')	
 print(CI_vector)
+'''
+
