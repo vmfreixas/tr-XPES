@@ -17,11 +17,11 @@ def get_MO_matrix_open_shell(FileName, Nbf, channel):
 		for line in moldenFile:
 			if read:
 				if alpha:
-					MO_matrix_alpha[int(line.split()[0]) - 1, a - 1] = float(line.split()[1])
+					MO_matrix_alpha[a - 1, int(line.split()[0]) - 1] = float(line.split()[1])
 					if int(line.split()[0]) == Nbf:
 						read = False
 				if beta:
-					MO_matrix_beta[int(line.split()[0]) - 1, b - 1] = float(line.split()[1])
+					MO_matrix_beta[b - 1, int(line.split()[0]) - 1] = float(line.split()[1])
 					if int(line.split()[0]) == Nbf:
 						read = False
 			if 'Occup=' in line:
@@ -39,5 +39,5 @@ def get_MO_matrix_open_shell(FileName, Nbf, channel):
 	elif channel == 'beta':
 		return MO_matrix_beta
 	else:
-		print("Error: please specify an 'alpha' or 'beta' channel")
+		print("Error: please specify an 'alpha' or 'beta' channel for reading MO matrix")
 		exit()

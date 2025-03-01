@@ -11,7 +11,7 @@ def get_MO_matrix_closed_shell(FileName, Nbf):
 		j = 0
 		for line in moldenFile:
 			if read:
-				MO_matrix[int(line.split()[0]) - 1, j - 1] = float(line.split()[1])
+				MO_matrix[j - 1, int(line.split()[0]) - 1] = float(line.split()[1])
 				if int(line.split()[0]) == Nbf:
 					read = False
 			if 'Occup=' in line:
