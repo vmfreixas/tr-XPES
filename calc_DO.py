@@ -11,11 +11,11 @@
 # - ntrlOrb -> MO to which the electron transition in the nuetral 
 #
 
-from get_AO_overlap_from_NWChem import get_AO_overlap_from_NWChem
-from get_MO_matrix_from_NWChem import get_MO_matrix_from_NWChem 
-from get_CI_closed_shell import get_CI_closed_shell
-from get_CI_open_shell import get_CI_open_shell
-from select_state_from_cation import select_state_from_cation
+from utils.get_AO_overlap_from_NWChem import get_AO_overlap_from_NWChem
+from utils.get_MO_matrix_from_NWChem import get_MO_matrix_from_NWChem 
+from utils.get_CI_closed_shell import get_CI_closed_shell
+from utils.get_CI_open_shell import get_CI_open_shell
+from utils.select_state_from_cation import select_state_from_cation
 import numpy as np
 import time
 
