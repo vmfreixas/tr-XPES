@@ -3,6 +3,7 @@
 
 from ase import io
 from pyscf import gto 
+import numpy as np
 
 def read_xyz(xyzFile):  
         with open(xyzFile, 'r') as f:
@@ -15,7 +16,7 @@ def read_xyz(xyzFile):
                 atoms.append((symbol, coords))
         return atoms
 
-def calc_AO_overlap(xyzFile1, basis):
+def calc_AO_overlap_from_xyz(xyzFile1, basis):
         #Reading xyz file:
         mol1 = read_xyz(xyzFile1)
         #Building Pyscf molecule objects:
@@ -23,6 +24,8 @@ def calc_AO_overlap(xyzFile1, basis):
         mol1_pyscf.atom = mol1
         mol1_pyscf.basis = basis
         mol1_pyscf.build()
-	#Calculating and returning atomic orbital overlaps:
+	    #Calculating and returning atomic orbital overlaps:
         return mol1_pyscf.intor('int1e_ovlp')	
 	
+#AO_overlaps = calc_AO_overlap_from_xyz('geometry.xyz')
+#np.savetxt('ao_from_xyz.txt', AO_overlaps, fmt = '%.8f')

@@ -1,11 +1,10 @@
 from get_AO_overlap import get_AO_overlap
-from calc_AO_overlap import calc_AO_overlap
+from calc_AO_overlap_from_xyz import calc_AO_overlap_from_xyz
 from get_MO_matrix_closed_shell import get_MO_matrix_closed_shell
 from get_MO_matrix_open_shell import get_MO_matrix_open_shell
 from get_CI_closed_shell import get_CI_closed_shell
 from get_CI_open_shell import get_CI_open_shell
 from calc_MO_overlap import calc_MO_overlap
-from renormalize_MO import renormalize_MO
 import numpy as np
 
 '''
@@ -74,20 +73,15 @@ print(CI_vector)
 
 # Testing the calculation of MO overlaps
 
-file1 = 'geometry.xyz'
-AO_overlaps = calc_AO_overlap(file1, 'def2-TZVP')
-np.savetxt('ao_overlap_pyscf.txt', AO_overlaps, fmt = '%.8f')
+AO_overlaps = calc_AO_overlap_from_xyz('geometry.xyz', 'def2-TZVP')
+#AO_overlaps = calc_AO_overlap_from_molden(moldenFile)
 
+np.savetxt('ao_from_xyz.txt', AO_overlaps, fmt = '%.8f')
 
-file1 = 'tddft_6_31G.out'
-AO_overlaps = get_AO_overlap(file1)
-np.savetxt('ao_overlap.txt', AO_overlaps, fmt = '%.8f')
+Nbf = 519
 
-Nbf = 243
-
-moldenFile = 'HBQ_Neutral_janpa_6_31G.molden'
-MO_matrix1 = get_MO_matrix_closed_shell(moldenFile, Nbf)
-np.savetxt('mo1.txt', MO_matrix1, fmt = '%.8f')
+#MO_matrix1 = get_MO_matrix_closed_shell(moldenFile, Nbf)
+#np.savetxt('mo1.txt', MO_matrix1, fmt = '%.8f')
 
 #moldenFile = 'HBQ_Neutral_janpa.molden'
 #MO_matrix2 = get_MO_matrix_open_shell(moldenFile, Nbf, 'beta')
