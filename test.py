@@ -70,7 +70,8 @@ print('CI_vector: ')
 print(CI_vector)
 '''
 
-# Testing the norm of MO
+'''
+# Testing the norm of the MO
 nwFile = 'tddft_Neutral.out'
 AO_overlaps = get_AO_overlap_from_NWChem(nwFile)
 np.savetxt('ao.txt', AO_overlaps, fmt = '%.6f')
@@ -80,3 +81,5 @@ np.savetxt('mo1.txt', MO, fmt = '%.6f')
 
 norm = MO.T @ AO_overlaps @ MO
 np.savetxt('norm.txt', norm, fmt = '%.6f')
+'''
+
