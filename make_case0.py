@@ -41,7 +41,7 @@ def make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName):
             oFile.write('%geom' + str(j) + '\ntestcase(' + str(j) + ').xyz=((1/0.52917721092)*[\n')
             for line in coords[tr]:
                 oFile.write(str(line[0]) + ' ' + str(line[1]) + ' ' + str(line[2]) + '\n')
-            oFile.write('];\n\ntestcase(' + str(j) + ").Basis='" + basis + "';\n")
+            oFile.write(']);\n\ntestcase(' + str(j) + ").Basis='" + basis + "';\n")
             oFile.write('testcase(' + str(j) + ').Elements=[')
             k = -1
             for a in atoms:
@@ -67,5 +67,5 @@ basis = 'def2-TZVP'
 n0 = 1 - 1
 ntr = 3
 nsteps = 1
-outFileName = 'case0.m'
+outFileName = 'transition_moments/case0.m'
 make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName)
