@@ -5,6 +5,7 @@ from get_AO_overlap_from_NWChem import get_AO_overlap_from_NWChem
 from get_MO_matrix_from_NWChem import get_MO_matrix_from_NWChem 
 from get_CI_closed_shell import get_CI_closed_shell
 from get_CI_open_shell import get_CI_open_shell
+from select_state_from_cation import select_state_from_cation
 import numpy as np
 import time
 
@@ -16,6 +17,8 @@ Nocc = 51
 NVir = Nbf - Nocc
 coreOrb = 1  # Orbital from where the electron is removed in the cation 
 valeOrb = 51 # Orbital from where the electron transition in the neutral
+ntrlOrb = 52 # Orbital to which the electron transiiton in the neutral
+channel = 'beta'
 
 #   AO overlap matrix:
 ao = get_AO_overlap_from_NWChem(neutralFile)
@@ -24,7 +27,7 @@ ao = get_AO_overlap_from_NWChem(neutralFile)
 moN = get_MO_matrix_from_NWChem(neutralFile)
 
 #   MO for the Cation molecule
-moC = get_MO_matrix_from_NWChem(cationFile, 'beta')
+moC = get_MO_matrix_from_NWChem(cationFile, channel)
 
 #   Overlap matrix between both MO
 moOverlap = moC.T @ ao @ moN
@@ -32,8 +35,11 @@ moOverlap = moC.T @ ao @ moN
 #   CI vector for the Neutral molecule
 ciN = get_CI_closed_shell(neutralFile, 1)
 
+#   Cation state
+root = select_state_from_cation(cationFile, channel, coreOrb, ntrlOrb)
+
 #   CI vector for the Cation molecule
-ciC = get_CI_open_shell(cationFile, 3, 'beta')
+ciC = get_CI_open_shell(cationFile, root, channel)
 #Note: State here need to be read!!!
 
 #   Calculating Dyson orbitals from an excited state of the Neutral to an
