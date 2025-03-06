@@ -13,7 +13,7 @@ file1 = 'geometry.xyz'
 
 AO_overlaps = calc_AO_overlap(file1, 'def2-TZVP')
 
-np.savetxt('ao_overlap.txt', AO_overlaps, fmt = '%.6f')
+np.savetxt('ao_overlap.dat', AO_overlaps, fmt = '%.6f')
 '''
 
 '''
@@ -22,7 +22,7 @@ np.savetxt('ao_overlap.txt', AO_overlaps, fmt = '%.6f')
 file1 = 'tddft_janpa.out'
 AO_overlaps = get_AO_overlap(file1)
 
-np.savetxt('ao_overlap.txt', AO_overlaps, fmt = '%.6f')
+np.savetxt('ao_overlap.dat', AO_overlaps, fmt = '%.6f')
 '''
 
 '''
@@ -33,7 +33,7 @@ Nbf = 519
 
 MO_matrix = get_MO_matrix_closed_shell(moldenFile, Nbf)
 
-np.savetxt('mo_matrix.txt', MO_matrix, fmt = '%.6f')
+np.savetxt('mo_matrix.dat', MO_matrix, fmt = '%.6f')
 '''
 
 '''
@@ -44,7 +44,7 @@ Nbf = 519
 
 MO_matrix = get_MO_matrix_open_shell(moldenFile, Nbf, 'alpha')
 
-np.savetxt('mo_matrix.txt', MO_matrix, fmt = '%.6f')
+np.savetxt('mo_matrix.dat', MO_matrix, fmt = '%.6f')
 '''
 
 '''
@@ -74,12 +74,12 @@ print(CI_vector)
 # Testing the norm of the MO
 nwFile = 'tddft_Neutral.out'
 AO_overlaps = get_AO_overlap_from_NWChem(nwFile)
-np.savetxt('ao.txt', AO_overlaps, fmt = '%.6f')
+np.savetxt('ao.dat', AO_overlaps, fmt = '%.6f')
 
 MO = get_MO_matrix_from_NWChem(nwFile, 'alpha')
-np.savetxt('mo1.txt', MO, fmt = '%.6f') 
+np.savetxt('mo1.dat', MO, fmt = '%.6f') 
 
 norm = MO.T @ AO_overlaps @ MO
-np.savetxt('norm.txt', norm, fmt = '%.6f')
+np.savetxt('norm.dat', norm, fmt = '%.6f')
 '''
 

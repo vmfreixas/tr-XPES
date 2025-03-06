@@ -102,4 +102,4 @@ channel = 'beta'
 bAO = calc_DO(neutralFile, cationFile, Nbf, Nocc, coreOrb, valeOrb,
     ntrlOrb, channel)
 
-np.savetxt('DO_AO.txt', bAO, fmt = '%.6f')
+np.savetxt('DO_AO_1.dat', bAO, fmt = '%.6f')
