@@ -430,7 +430,7 @@ for igrid = 1:74
     clear dysontz;
     
 end
-writematrix(Elist,'MTSOLedgeElistnew.txt');
+%writematrix(Elist,'MTSOLedgeElistnew.txt');
 
 
 
