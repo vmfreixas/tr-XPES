@@ -13,7 +13,7 @@
 
 import numpy as np
 
-def get_AO_overlap(fileName):
+def get_AO_overlap_from_NWChem(fileName):
     with open(fileName, 'r') as nwFile:
         AO_block = False
         read = False

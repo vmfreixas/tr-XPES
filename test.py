@@ -1,10 +1,9 @@
-from get_AO_overlap import get_AO_overlap
+from get_AO_overlap_from_NWChem import get_AO_overlap_from_NWChem
 from calc_AO_overlap_from_xyz import calc_AO_overlap_from_xyz
-from get_MO_matrix_closed_shell import get_MO_matrix_closed_shell
-from get_MO_matrix_open_shell import get_MO_matrix_open_shell
 from get_CI_closed_shell import get_CI_closed_shell
 from get_CI_open_shell import get_CI_open_shell
 from calc_MO_overlap import calc_MO_overlap
+from get_MO_matrix_from_NWChem import get_MO_matrix_from_NWChem
 import numpy as np
 
 '''
@@ -71,26 +70,13 @@ print('CI_vector: ')
 print(CI_vector)
 '''
 
-# Testing the calculation of MO overlaps
+# Testing the norm of MO
+nwFile = 'tddft_Neutral.out'
+AO_overlaps = get_AO_overlap_from_NWChem(nwFile)
+np.savetxt('ao.txt', AO_overlaps, fmt = '%.6f')
 
-AO_overlaps = calc_AO_overlap_from_xyz('geometry.xyz', 'def2-TZVP')
-#AO_overlaps = calc_AO_overlap_from_molden(moldenFile)
+MO = get_MO_matrix_from_NWChem(nwFile, 'alpha')
+np.savetxt('mo1.txt', MO, fmt = '%.6f') 
 
-np.savetxt('ao_from_xyz.txt', AO_overlaps, fmt = '%.8f')
-
-Nbf = 519
-
-#MO_matrix1 = get_MO_matrix_closed_shell(moldenFile, Nbf)
-#np.savetxt('mo1.txt', MO_matrix1, fmt = '%.8f')
-
-#moldenFile = 'HBQ_Neutral_janpa.molden'
-#MO_matrix2 = get_MO_matrix_open_shell(moldenFile, Nbf, 'beta')
-#print(MO_matrix2)
-##MO_matrix2 = renormalize_MO(MO_matrix, AO_overlaps)
-
-#np.savetxt('mo2.txt', MO_matrix2, fmt = '%.6f')
-
-#MO_overlaps = calc_MO_overlap(MO_matrix1, MO_matrix2, AO_overlaps)
-
-#np.savetxt('mo_overlap.txt', MO_overlaps, fmt = '%.6f')
-
+norm = MO.T @ AO_overlaps @ MO
+np.savetxt('norm.txt', norm, fmt = '%.6f')
