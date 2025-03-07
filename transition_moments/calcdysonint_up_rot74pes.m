@@ -1,4 +1,4 @@
-function  out = calcdysonint_up( xyz,Atoms,TotalCharge,Options,integralDir )
+function  out = calcdysonint_up( xyz,Atoms,TotalCharge,Options,integralDir,e0,ef,de )
 
 Set = Options.BasisSet;  % name of basis set, e.g. sto-3g
 
@@ -373,7 +373,7 @@ for igrid = 1:74
     
     ecounter = 0;
     icounter = 0;
-    for Eelectron = 0.1:0.1:16.0  % (eV) 
+    for Eelectron = e0:de:ef  % (eV) 
         
         icounter = icounter+1;
         %momentum

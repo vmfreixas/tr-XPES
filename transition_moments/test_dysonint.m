@@ -1,4 +1,4 @@
-function test_dysonint(inputFileName, r, integralDir)
+function test_dysonint(inputFileName, r, integralDir, e0, ef, de)
 
 %% TestBottom_up
 % This is a script for test. 
@@ -11,7 +11,7 @@ function test_dysonint(inputFileName, r, integralDir)
 load(inputFileName)
 Options.BasisSet = testcase(r).Basis;
 
-out = calcdysonint_up_rot74pes(testcase(r).xyz,testcase(r).Elements,testcase(r).TotalCharge,Options,integralDir);
+out = calcdysonint_up_rot74pes(testcase(r).xyz,testcase(r).Elements,testcase(r).TotalCharge,Options,integralDir, e0, ef, de);
 
 %
 %this part is MTSO turn this part off for rotational average. turn this on

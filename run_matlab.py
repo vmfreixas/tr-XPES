@@ -13,5 +13,8 @@ eng.case0(nargout = 0)
 inputFileName = 'transition_moments/testdyson.mat'
 r = 1
 integralDir = 'transition_moments/dysonorbint'
-eng.test_dysonint(inputFileName, r, integralDir, nargout = 0)
+e0 = 0.1  #eV
+de = 0.1  #eV
+ef = 16.0 #eV
+eng.test_dysonint(inputFileName, r, integralDir, e0, ef, de, nargout = 0)
 
