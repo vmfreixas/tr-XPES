@@ -12,7 +12,7 @@
 # - outFile -> Is the name of the ".mat" output file
 #
 
-def make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName):
+def make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName, testDysonFileName = 'testdyson.mat'):
     with open(xyzFileName, 'r') as xyzFile:
         i = -3
         coords = []
@@ -61,6 +61,7 @@ def make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName):
                     oFile.write(',')
                 else:
                     oFile.write('];\ntestcase(' + str(j) + ').TotalCharge=0;\n\n')
+        oFile.write("save('" + testDysonFileName + "','testcase');")
 
 xyzFileName = '../../From_Niri_example_1/traj/traj77433/HBQ-enol-es-md.xyz'    
 basis = 'def2-TZVP'
@@ -68,4 +69,5 @@ n0 = 1 - 1
 ntr = 3
 nsteps = 1
 outFileName = 'transition_moments/case0.m'
-make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName)
+testDysonFileName = '/Users/victormanuelfreixaslemus/Desktop/Projects/Photoelectron_spectroscopy/tr_XPES_code/tr-XPES/transition_moments/testdyson.mat'
+make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName, testDysonFileName)

@@ -18,7 +18,7 @@
 
 function BasisSet = basisread(BasisSetName)
 
-basissetfilename = ['basissets/' BasisSetName '.basis'];
+basissetfilename = ['transition_moments/basissets/' BasisSetName '.basis'];
 
 % Read all lines from file into a single cell array (one cell per line)
 allLines = textread(basissetfilename,'%s','delimiter','\n','whitespace','');
