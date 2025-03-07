@@ -1,11 +1,13 @@
 %scho%calculate dyson integral by contracting MO coeff 
-clear 
+%clear 
+
+function calc_dysondipintloop_lebedev74rod(orbIntDir, DOFileName, nDO, outputDir, e0, ef, de)
 
 for igridpoint = 1:74
     stringofnum=string(igridpoint);
     
-    file1 = "dysonorbint/total74rodMTSOdysonxreal"+stringofnum+".txt"
-    file2 = "dysonorbint/total74rodMTSOdysonximag"+stringofnum+".txt"
+    file1 = orbIntDir + "/total74rodMTSOdysonxreal"+stringofnum+".txt"
+    file2 = orbIntDir + "/total74rodMTSOdysonximag"+stringofnum+".txt"
     
     intRe = load(file1);
     intIm = load(file2);
@@ -14,8 +16,8 @@ for igridpoint = 1:74
     dysonxint = intRe+i*intIm;
     
     
-    file1 = "dysonorbint/total74rodMTSOdysonyreal"+stringofnum+".txt"
-    file2 = "dysonorbint/total74rodMTSOdysonyimag"+stringofnum+".txt"
+    file1 = orbIntDir + "/total74rodMTSOdysonyreal"+stringofnum+".txt"
+    file2 = orbIntDir + "/total74rodMTSOdysonyimag"+stringofnum+".txt"
     
     intRe = load(file1);
     intIm = load(file2);
@@ -23,8 +25,8 @@ for igridpoint = 1:74
     %dysonyint = load("dysonorbint/MTSOdysonyreal"+stringofnum+".txt")+i*load("dysonorbint/MTSOdysonyimag"+stringofnum+".txt");
     dysonyint = intRe+i*intIm;
     
-    file1 = "dysonorbint/total74rodMTSOdysonzreal"+stringofnum+".txt"
-    file2 = "dysonorbint/total74rodMTSOdysonzimag"+stringofnum+".txt"
+    file1 = orbIntDir + "/total74rodMTSOdysonzreal"+stringofnum+".txt"
+    file2 = orbIntDir + "/total74rodMTSOdysonzimag"+stringofnum+".txt"
     
     intRe = load(file1);
     intIm = load(file2);
@@ -41,7 +43,7 @@ for igridpoint = 1:74
     % k from 164.8 eV to 167 eV
     icounter = 0;
     ecounter = 0;
-    for Eelectron = 0.1:0.1:16.0 
+    for Eelectron = e0:de:ef 
         %momentum
         ecounter = ecounter+1;
         Elist(ecounter)=Eelectron;
@@ -67,9 +69,9 @@ for igridpoint = 1:74
     numkvec = icounter;
     angle = "60";
     dis = "17";
-    for ii = 1:1
+    for ii = 1:nDO
     
-        inputnamereal = "/Users/victormanuelfreixaslemus/Desktop/Projects/Photoelectron_spectroscopy/tr_XPES_code/tr-XPES/DO_AO_" + string(ii) + ".dat";
+        inputnamereal = DOFileName + string(ii) + ".dat";
         
         realtemp = importdata(inputnamereal); 
        
@@ -83,11 +85,13 @@ for igridpoint = 1:74
         intneu1cat2(:,2) = transpose((alphatemp)*dysonyint);
         intneu1cat2(:,3) = transpose((alphatemp)*dysonzint);
         
-        outputnamereal = "New_dipoles_0/dipolesRe" + stringofnum + "_" + string(ii) + ".dat";
-        outputnameimag = "New_dipoles_0/dipolesIm" + stringofnum + "_" + string(ii) + ".dat";
+        outputnamereal = outputDir + "/dipolesRe" + stringofnum + "_" + string(ii) + ".dat";
+        outputnameimag = outputDir + "/dipolesIm" + stringofnum + "_" + string(ii) + ".dat";
     
         writematrix(real(intneu1cat2),outputnamereal);
         writematrix(imag(intneu1cat2),outputnameimag);
     end
 
-end 
+end
+
+end

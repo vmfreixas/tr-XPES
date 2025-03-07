@@ -18,3 +18,8 @@ de = 0.1  #eV
 ef = 16.0 #eV
 eng.test_dysonint(inputFileName, r, integralDir, e0, ef, de, nargout = 0)
 
+orbIntDir = integralDir
+DOFileName = 'DO_AO_'
+nDO = 1
+outputDir = '/Users/victormanuelfreixaslemus/Desktop/Projects/Photoelectron_spectroscopy/tr_XPES_code/tr-XPES/Dipole_results/'
+eng.calc_dysondipintloop_lebedev74rod(orbIntDir, DOFileName, nDO, outputDir, e0, ef, de, nargout = 0)
