@@ -1,4 +1,4 @@
-function  out = calcdysonint_up( xyz,Atoms,TotalCharge,Options,integralDir,e0,ef,de )
+function  out = calcdysonint_up( xyz,Atoms,TotalCharge,Options,integralDir,e0,ef,de,r )
 
 Set = Options.BasisSet;  % name of basis set, e.g. sto-3g
 
@@ -385,7 +385,7 @@ for igrid = 1:74
         krotated(1) = xyzofgrid(1)*kvalueEh;
         krotated(2) = xyzofgrid(2)*kvalueEh;
         krotated(3) = xyzofgrid(3)*kvalueEh;
-        
+
         klist(icounter,1)=krotated(1);
         klist(icounter,2)=krotated(2);
         klist(icounter,3)=krotated(3);
@@ -416,14 +416,14 @@ for igrid = 1:74
     
     clear klist;
     % write matrix
-    writematrix(real(dysonintx),integralDir+"/total74rodMTSOdysonxreal"+string(igrid)+".txt");
-    writematrix(imag(dysonintx),integralDir+"/total74rodMTSOdysonximag"+string(igrid)+".txt");
+    writematrix(real(dysonintx),integralDir+"/total74rodMTSOdysonxreal"+string(igrid)+"_"+string(r)+".txt");
+    writematrix(imag(dysonintx),integralDir+"/total74rodMTSOdysonximag"+string(igrid)+"_"+string(r)+".txt");
 
-    writematrix(real(dysoninty),integralDir+"/total74rodMTSOdysonyreal"+string(igrid)+".txt");
-    writematrix(imag(dysoninty),integralDir+"/total74rodMTSOdysonyimag"+string(igrid)+".txt");
+    writematrix(real(dysoninty),integralDir+"/total74rodMTSOdysonyreal"+string(igrid)+"_"+string(r)+".txt");
+    writematrix(imag(dysoninty),integralDir+"/total74rodMTSOdysonyimag"+string(igrid)+"_"+string(r)+".txt");
     
-    writematrix(real(dysonintz),integralDir+"/total74rodMTSOdysonzreal"+string(igrid)+".txt");
-    writematrix(imag(dysonintz),integralDir+"/total74rodMTSOdysonzimag"+string(igrid)+".txt");
+    writematrix(real(dysonintz),integralDir+"/total74rodMTSOdysonzreal"+string(igrid)+"_"+string(r)+".txt");
+    writematrix(imag(dysonintz),integralDir+"/total74rodMTSOdysonzimag"+string(igrid)+"_"+string(r)+".txt");
     clear dysontx;
     clear dysonty;
     clear dysontz;

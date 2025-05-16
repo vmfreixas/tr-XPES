@@ -17,6 +17,8 @@ def make_whole_xyz(masterDataFileName):
     with open(masterDataFileName + '/wholeCoords.xyz', 'w') as oFile:
         for line in xyzAll:
             oFile.write(line)
+'''
 #Example of use
 masterDataFileName = '/Users/victormanuelfreixaslemus/Desktop/Projects/Photoelectron_spectroscopy/tr_XPES_code/tr-XPES/data_test_2/'
 make_whole_xyz(masterDataFileName)
+'''

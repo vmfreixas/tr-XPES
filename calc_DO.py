@@ -88,7 +88,8 @@ def calc_DO(neutralFile, cationFile, Nbf, Nocc, coreOrb, valeOrb,
     norm = np.linalg.norm(bAO)
     print('The norm of the Dyson orbital is: ' + str(norm))
     return(bAO)
-
+'''
+#Example of application
 neutralFile = 'tddft_Neutral.out'
 cationFile = 'tddft_Cation_O.out'
 
@@ -103,3 +104,4 @@ bAO = calc_DO(neutralFile, cationFile, Nbf, Nocc, coreOrb, valeOrb,
     ntrlOrb, channel)
 
 np.savetxt('DO_AO_1.dat', bAO, fmt = '%.6f')
+'''

@@ -62,7 +62,8 @@ def make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName, testDysonFileNa
                 else:
                     oFile.write('];\ntestcase(' + str(j) + ').TotalCharge=0;\n\n')
         oFile.write("save('" + testDysonFileName + "','testcase');")
-
+'''
+#Example of application
 xyzFileName = '../../From_Niri_example_1/traj/traj77433/HBQ-enol-es-md.xyz'    
 basis = 'def2-TZVP'
 n0 = 1 - 1
@@ -71,3 +72,4 @@ nsteps = 1
 outFileName = 'transition_moments/case0.m'
 testDysonFileName = '/Users/victormanuelfreixaslemus/Desktop/Projects/Photoelectron_spectroscopy/tr_XPES_code/tr-XPES/transition_moments/testdyson.mat'
 make_case0(xyzFileName, basis, n0, ntr, nsteps, outFileName, testDysonFileName)
+'''

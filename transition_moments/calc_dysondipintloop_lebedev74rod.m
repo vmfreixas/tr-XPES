@@ -1,13 +1,14 @@
 %scho%calculate dyson integral by contracting MO coeff 
 %clear 
 
-function calc_dysondipintloop_lebedev74rod(orbIntDir, DOFileName, nDO, outputDir, e0, ef, de)
+function calc_dysondipintloop_lebedev74rod(orbIntDir, DOFileName, nDO, outputDir, e0, ef, de, r)
 
 for igridpoint = 1:74
+    stringofr=string(r);
     stringofnum=string(igridpoint);
     
-    file1 = orbIntDir + "/total74rodMTSOdysonxreal"+stringofnum+".txt"
-    file2 = orbIntDir + "/total74rodMTSOdysonximag"+stringofnum+".txt"
+    file1 = orbIntDir + "/total74rodMTSOdysonxreal"+stringofnum+"_"+stringofr+".txt"
+    file2 = orbIntDir + "/total74rodMTSOdysonximag"+stringofnum+"_"+stringofr+".txt"
     
     intRe = load(file1);
     intIm = load(file2);
@@ -16,8 +17,8 @@ for igridpoint = 1:74
     dysonxint = intRe+i*intIm;
     
     
-    file1 = orbIntDir + "/total74rodMTSOdysonyreal"+stringofnum+".txt"
-    file2 = orbIntDir + "/total74rodMTSOdysonyimag"+stringofnum+".txt"
+    file1 = orbIntDir + "/total74rodMTSOdysonyreal"+stringofnum+"_"+stringofr+".txt"
+    file2 = orbIntDir + "/total74rodMTSOdysonyimag"+stringofnum+"_"+stringofr+".txt"
     
     intRe = load(file1);
     intIm = load(file2);
@@ -25,8 +26,8 @@ for igridpoint = 1:74
     %dysonyint = load("dysonorbint/MTSOdysonyreal"+stringofnum+".txt")+i*load("dysonorbint/MTSOdysonyimag"+stringofnum+".txt");
     dysonyint = intRe+i*intIm;
     
-    file1 = orbIntDir + "/total74rodMTSOdysonzreal"+stringofnum+".txt"
-    file2 = orbIntDir + "/total74rodMTSOdysonzimag"+stringofnum+".txt"
+    file1 = orbIntDir + "/total74rodMTSOdysonzreal"+stringofnum+"_"+stringofr+".txt"
+    file2 = orbIntDir + "/total74rodMTSOdysonzimag"+stringofnum+"_"+stringofr+".txt"
     
     intRe = load(file1);
     intIm = load(file2);
@@ -85,8 +86,8 @@ for igridpoint = 1:74
         intneu1cat2(:,2) = transpose((alphatemp)*dysonyint);
         intneu1cat2(:,3) = transpose((alphatemp)*dysonzint);
         
-        outputnamereal = outputDir + "/dipolesRe" + stringofnum + "_" + string(ii) + ".dat";
-        outputnameimag = outputDir + "/dipolesIm" + stringofnum + "_" + string(ii) + ".dat";
+        outputnamereal = outputDir + "/dipolesRe" + stringofnum + "_" + string(ii) + "_" + stringofr + ".dat";
+        outputnameimag = outputDir + "/dipolesIm" + stringofnum + "_" + string(ii) + "_" + stringofr + ".dat";
     
         writematrix(real(intneu1cat2),outputnamereal);
         writematrix(imag(intneu1cat2),outputnameimag);
