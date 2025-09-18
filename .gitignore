@@ -40,9 +40,9 @@ Temporary Items
 __pycache__/
 
 # Output and data files
-*.txt
-*.dat
-*.data
-*.molden
-*.out
-*.xyz
+#*.txt
+#*.dat
+#*.data
+#*.molden
+#*.out
+#*.xyz
