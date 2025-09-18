@@ -1,7 +1,0 @@
-
-Lmod is automatically replacing "gcc-native/13.2" with "intel/2024.1.0".
-
-
-Due to MODULEPATH changes, the following have been reloaded:
-  1) cray-libsci/24.07.0     2) cray-mpich/8.1.30
-

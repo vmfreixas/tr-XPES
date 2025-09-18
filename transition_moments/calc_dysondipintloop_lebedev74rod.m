@@ -72,7 +72,7 @@ for igridpoint = 1:74
     dis = "17";
     for ii = 1:nDO
     
-        inputnamereal = DOFileName + string(ii) + ".dat";
+        inputnamereal = DOFileName + string(ii) + ".dat"
         
         realtemp = importdata(inputnamereal); 
        
