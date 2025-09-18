@@ -16,8 +16,15 @@ for the calculation of the Dyson orbitals, we need to swap the core
 orbital index with the one of the orbital replaced in the main
 transition of the neutral excited state (HOMO in the original case).
 
-  Dyson orbitals are coded in Python and use Pyscf for calculating
-overlaps.
+  Transition dipole moments and rotational averages are coded in
+Matlab.
 
-  Transition dipole moments and rotational averages are coded in Matlab.
+  The example corresponds to a single point computation of the HBQ
+system.
 
+  The notebook splits the computation in two steps:
+  1- DO computation
+  2- Transition moment computation
+
+  From the transition moments the computation of the tr-XPES signal is
+strighforward.
