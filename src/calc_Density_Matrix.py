@@ -43,6 +43,7 @@ def calc_Density_Matrix(nocc, MO_coeff, CI_vector=None):
     # Return the Density Matrix in the AO basis
     return MO_coeff @ D @ MO_coeff.T
 
+'''
 # Example usage:
 from get_MO_matrix_from_NWChem import get_MO_matrix_from_NWChem
 from get_CI_closed_shell import get_CI_closed_shell
@@ -55,3 +56,4 @@ CI_vector = get_CI_closed_shell(fileName, root)
 Density_Matrix = calc_Density_Matrix(nocc, MO_coeff, CI_vector)
 overlaps = get_AO_overlap_from_NWChem(fileName)
 print(np.trace(Density_Matrix @ overlaps)) # Should print approximately 2 * nocc (102 in the HBQ example)
+'''
