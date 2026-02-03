@@ -28,3 +28,7 @@ system.
 
   From the transition moments the computation of the tr-XPES signal is
 strighforward.
+
+# Mayer Bond Order
+
+  Functionality for calculating MBO is also included.
