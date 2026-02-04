@@ -1,0 +1,213 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      6927,        205]
+NotebookOptionsPosition[      6045,        182]
+NotebookOutlinePosition[      6437,        198]
+CellTagsIndexPosition[      6394,        195]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{
+   "Import", 
+    "[", "\"\</Users/victormanuelfreixaslemus/Desktop/Projects/Git_portafolio/\
+trXPES/tr-XPES/examples/HBQ/tr_001/Neutral/step_01_0/coords.xyz\>\"", "]"}]}],
+   ";"}]], "Input",
+ CellChangeTimes->{{3.97914692045004*^9, 3.9791469552683067`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"db7ae7ed-dd8a-4753-bc9a-301becf93d45"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BondList", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.9791469576535254`*^9, 3.9791469605375433`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"632ce819-fd3f-451f-baef-3d80f462f9af"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"4", ",", "7"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"7", ",", "8"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"8", ",", "9"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"9", ",", "6"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"6", ",", "15"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"9", ",", "19"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"8", ",", "10"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", "11"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", "12"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"12", ",", "13"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"13", ",", "14"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"14", ",", "22"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"22", ",", "23"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"13", ",", "21"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"12", ",", "20"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"4", ",", "24"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"24", ",", "5"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "18"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "17"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "16"}], "}"}], ",", "\<\"Single\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"6", ",", "3"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}], ",", 
+   RowBox[{"Bond", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"14", ",", "7"}], "}"}], ",", "\<\"Aromatic\"\>"}], "]"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.979146961051899*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"8b5947bd-9c48-4d8c-bb35-269fd13b15d0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"SetDirectory", 
+  "[", "\"\</Users/victormanuelfreixaslemus/Desktop/Projects/Git_portafolio/\
+trXPES/tr-XPES/examples/HBQ/tr_001\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{"\"\<BondList.dat\>\"", ",", 
+   RowBox[{
+    RowBox[{"BondList", "[", "m", "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"All", ",", "1"}], "]"}], "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.979147008531446*^9, 3.979147071457849*^9}, {
+  3.979147162518422*^9, 
+  3.979147162843152*^9}},ExpressionUUID->"4b8fdb3e-9147-468d-aee6-\
+5b7a41f43bec"],
+
+Cell[BoxData["\<\"/Users/victormanuelfreixaslemus/Desktop/Projects/Git_\
+portafolio/trXPES/tr-XPES/examples/HBQ/tr_001\"\>"], "Output",
+ CellChangeTimes->{{3.979147010364677*^9, 3.979147014004416*^9}, 
+   3.9791470747880297`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"925fd10e-5262-4e5e-9895-b6820b765608"],
+
+Cell[BoxData["\<\"bondList.dat\"\>"], "Output",
+ CellChangeTimes->{{3.979147010364677*^9, 3.979147014004416*^9}, 
+   3.979147074788864*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"6591428f-9039-420d-987d-30e633371c35"]
+}, Open  ]]
+},
+WindowSize->{808, 810},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"14.2 for Mac OS X ARM (64-bit) (March 16, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"316a14d8-9517-459c-bab4-499c28521cd6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 394, 9, 90, "Input",ExpressionUUID->"db7ae7ed-dd8a-4753-bc9a-301becf93d45"],
+Cell[CellGroupData[{
+Cell[973, 33, 209, 3, 29, "Input",ExpressionUUID->"632ce819-fd3f-451f-baef-3d80f462f9af"],
+Cell[1185, 38, 3703, 112, 196, "Output",ExpressionUUID->"8b5947bd-9c48-4d8c-bb35-269fd13b15d0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4925, 155, 573, 13, 90, "Input",ExpressionUUID->"4b8fdb3e-9147-468d-aee6-5b7a41f43bec"],
+Cell[5501, 170, 307, 4, 53, "Output",ExpressionUUID->"925fd10e-5262-4e5e-9895-b6820b765608"],
+Cell[5811, 176, 218, 3, 33, "Output",ExpressionUUID->"6591428f-9039-420d-987d-30e633371c35"]
+}, Open  ]]
+}
+]
+*)
+
