@@ -31,15 +31,15 @@ def calc_Density_Matrix(nocc, MO_coeff, CI_vector=None):
         for i, b, coeff in CI_vector:
             ci[i - 1, (b - 1) - nocc] = coeff
 
-        # Initialize TDM
-        TDM = np.zeros((nmo, nmo))
+        # Initialize deltaD
+        deltaD = np.zeros((nmo, nmo))
 
-        # Compute TDM contributions
-        TDM[:nocc, :nocc] -= ci @ ci.T
-        TDM[nocc:, nocc:] += ci.T @ ci
+        # Compute deltaD contributions
+        deltaD[:nocc, :nocc] -= 2.0 * ci @ ci.T
+        deltaD[nocc:, nocc:] += 2.0 * ci.T @ ci
 
-        # Add TDM to the density matrix
-        D += TDM
+        # Add deltaD to the density matrix
+        D += deltaD
     # Return the Density Matrix in the AO basis
     return MO_coeff @ D @ MO_coeff.T
 
